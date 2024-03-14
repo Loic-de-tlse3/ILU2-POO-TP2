@@ -2,6 +2,8 @@ package frontiere;
 
 import java.util.Scanner;
 
+import controleur.ControlAfficherMarche;
+import controleur.ControlEmmenager;
 import controleur.ControlPrendreEtal;
 import villagegaulois.Village;
 
@@ -30,7 +32,17 @@ public class BoundaryPrendreEtal {
 
 	private void installerVendeur(String nomVendeur) {
 		System.out.println("C'est parfait il me reste un étal pour vous !");
-		StringBuilder questionRenseignement = new StringBuilder();
-		questionRenseignement.append("Il me faudrait quelques renseignements:\nQuel produit souhaitez-vous vendre ?");
+		StringBuilder questionProduit = new StringBuilder();
+		questionProduit.append("Il me faudrait quelques renseignements:\nQuel produit souhaitez-vous vendre ?");
+		System.out.println(questionProduit.toString());
+		String produit = scan.nextLine();
+		StringBuilder questionNbProduit = new StringBuilder();
+		questionNbProduit.append("Combien souhaitez vous en vendre ?");
+		int nbProduit = Clavier.entrerEntier(questionNbProduit.toString());
+		int numeroEtal = -1;
+		if ((numeroEtal = controlPrendreEtal.prendreEtal(nomVendeur, produit, nbProduit)) != -1) {
+			System.out.println("Le vendeur " + nomVendeur + " s'est installé à l'etal n° " + numeroEtal);
+		}
+		
 	}
 }
