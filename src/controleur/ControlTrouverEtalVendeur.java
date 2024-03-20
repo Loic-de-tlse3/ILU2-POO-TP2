@@ -14,7 +14,6 @@ public class ControlTrouverEtalVendeur {
 	public Etal trouverEtalVendeur(String nomVendeur) {
 		Gaulois gaulois = village.trouverHabitant(nomVendeur);
 		if (gaulois != null) {
-			System.out.println(village.rechercherEtal(gaulois).getVendeur());
 			return village.rechercherEtal(gaulois);
 		}
 		return null;
