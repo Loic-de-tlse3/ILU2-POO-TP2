@@ -20,12 +20,7 @@ public class ControlAcheterProduit {
 		return village.trouverHabitant(nomAcheteur) != null;
 	}
 	
-	public Gaulois[] vendeursDisponibles(String produit) {
-		return village.rechercherVendeursProduit(produit);
-	}
-	
-	public int numeroEtal(String vendeur) {
-		//village.
-		return -1;
+	public String[] vendeursDisponibles() {
+		return village.donnerEtatMarche();
 	}
 }

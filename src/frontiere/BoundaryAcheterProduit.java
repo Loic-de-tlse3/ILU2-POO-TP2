@@ -20,12 +20,10 @@ public class BoundaryAcheterProduit {
 		} else {
 			System.out.println("Que souhaitez-vous acheter ?");
 			String produitRecherche = scan.nextLine();
-			Gaulois[] vendeursProduit = controlAcheterProduit.vendeursDisponibles(produitRecherche);
-			if (vendeursProduit.length == 0) {
-				System.out.println("Désolé, personne ne vend ce produit au marche.");
-			} else {
-				for (int i = 0; i < vendeursProduit.length; i++) {
-					String nomVendeur = vendeursProduit[i].getNom();
+			String[] infosMarche = controlAcheterProduit.vendeursDisponibles();
+			for (int i = 2; i < infosMarche.length; i+=3) {
+				if (infosMarche[i].equals(produitRecherche)) {
+					System.out.println(i/3 + " - " + infosMarche[i-2]);
 				}
 			}
 		}
